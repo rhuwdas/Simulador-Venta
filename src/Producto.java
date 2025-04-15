@@ -46,8 +46,12 @@ public class Producto {
         return precio;
     }
 
-    public void setPrecio(Float precio) {
-        this.precio = precio;
+    public boolean setPrecio(Float precio) {
+        if (precio > 0) {
+            this.precio = precio;
+            return true;
+        }
+        return false;
     }
 
     public int getCantidad() {

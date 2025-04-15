@@ -12,11 +12,13 @@ public class Main {
             System.out.println("Ingrese el nombre del producto: ");
             String texto = sc.next();
             producto.setNombre(texto);
-            System.out.println("Ingrese el costo del producto: ");
-            producto.setPrecio(sc.nextFloat());
-            producto.setCodigo(""+8294042+i);
+            System.out.println("Ingrese el precio del producto: ");
+            while (!(producto.setPrecio(sc.nextFloat()))) {
+                System.out.println("El producto no se encuentra en un parametro incorecto introucalo de nuevo");
+            }
+            producto.setCodigo("" + 8294042 + i);
             System.out.println("Ingrese una descripción del producto: ");
-            texto  = "";
+            texto = "";
             texto = sc.next();
             producto.setDescripcion(texto);
             System.out.println("Ingrese la cantidad de producto: ");
@@ -26,10 +28,11 @@ public class Main {
             factura.RegistrarVenta(producto.getNombre(), producto.getPrecio(), producto.getCantidad());
             comparado.compararDatosA(producto.getNombre(), producto.getCantidad());
             i++;
-            if (leave <0){
+            if (leave < 0) {
                 factura.cerrarFactura();
                 break;
             }
+
         }
         System.out.println("La factura se ha finalizado");
         System.out.println(factura.imprimirFactura());
