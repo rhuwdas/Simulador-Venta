@@ -23,8 +23,8 @@ public class Main {
             producto.setCantidad(sc.nextInt());
             System.out.println("Ingrese un valor negativo imprimir la venta: ");
             leave = sc.nextInt();
-            factura.RegistrarVenta(producto.nombre, producto.precio, producto.cantidad);
-            comparado.compararDatosA(producto.nombre, producto.cantidad);
+            factura.RegistrarVenta(producto.getNombre(), producto.getPrecio(), producto.getCantidad());
+            comparado.compararDatosA(producto.getNombre(), producto.getCantidad());
             i++;
             if (leave <0){
                 factura.cerrarFactura();
@@ -33,6 +33,6 @@ public class Main {
         }
         System.out.println("La factura se ha finalizado");
         System.out.println(factura.imprimirFactura());
-        System.out.println("EL PRODUCTO MAS COMPRADO ES: "+ comparado.ventaMayor);
+        System.out.println("EL PRODUCTO MAS COMPRADO ES: "+ comparado.getVentaMayor());
     }
 }

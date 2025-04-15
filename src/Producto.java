@@ -1,10 +1,23 @@
 public class Producto {
-    String codigo;
-    String nombre;
-    String descripcion;
-    Float precio;
-    int cantidad;
-
+    private String codigo;
+    private String nombre;
+    private String descripcion;
+    private Float precio;
+    private int cantidad;
+    public Producto(String codigo, String nombre, String descripcion, Float precio, int cantidad) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+    public Producto() {
+        this.codigo = "";
+        this.nombre = "";
+        this.descripcion = "";
+        this.precio = 0.0f;
+        this.cantidad = 0;
+    }
     public String getCodigo() {
         return codigo;
     }

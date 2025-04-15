@@ -27,8 +27,29 @@
     }
 }*/
 public class Comparado {
-    byte cantVentaMay;
-    String ventaMayor;
+    private byte cantVentaMay;
+    private String ventaMayor;
+    public Comparado() {
+        cantVentaMay = 0;
+        ventaMayor = "";
+    }
+
+    public byte getCantVentaMay() {
+        return cantVentaMay;
+    }
+
+    public void setCantVentaMay(byte cantVentaMay) {
+        this.cantVentaMay = cantVentaMay;
+    }
+
+    public String getVentaMayor() {
+        return ventaMayor;
+    }
+
+    public void setVentaMayor(String ventaMayor) {
+        this.ventaMayor = ventaMayor;
+    }
+
     public boolean compararDatosA(String Venta, int cantVentaA) {
         if (cantVentaMay <= cantVentaA) {
             cantVentaMay = (byte) cantVentaA;
